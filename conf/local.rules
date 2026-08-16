@@ -1,0 +1,2 @@
+alert tcp any any -> $HOME_NET any (msg:"Possible scan de ports detecte"; flags:S; threshold: type threshold, track by_src, count 5, seconds 10; sid:1000001; rev:1;)
+alert icmp any any -> $HOME_NET any (msg:"Ping ICMP detecte"; sid:1000002; rev:1;)
