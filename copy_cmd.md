@@ -3,10 +3,10 @@ docker ps --format '{{.ID}}\t{{.Names}}'
 
 ## STEP 2:
 
-docker cp setup-firewall.sh d802c9b76b80:/root/
-docker cp setup-client-wan.sh 3be8b499dac8:/root/
-docker cp setup-serveur-web.sh 213cf2cd740e:/root/
-docker cp setup-client-lan.sh ea2926229913:/root/
+docker cp scripts/setup-firewall.sh {id_containter}:/root/
+docker cp scripts/setup-client-wan.sh  {id_containter}:/root/
+docker cp scripts/setup-serveur-web.sh  {id_containter}:/root/
+docker cp scripts/setup-client-lan.sh  {id_containter}:/root/
 
 
 ## STEP 3
