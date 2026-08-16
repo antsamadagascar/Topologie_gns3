@@ -10,7 +10,12 @@ Attendre ~15 secondes.
 
 Si le script est déjà sauvegardé (`/root/setup-*.sh` présent) :
 ```bash
-bash /root/setup-firewall.sh      # console Firewall-3if-1
+# 1. Lance le script (construit tout : IP, iptables, NAT, tc, Squid, Snort)
+bash /root/setup-firewall.sh
+
+# 2. Ensuite seulement, capturer l'état réel obtenu
+iptables-save > /root/iptables-firewall.rules
+
 bash /root/setup-client-wan.sh    # console Client-WAN
 bash /root/setup-serveur-web.sh   # console Serveur-Web
 bash /root/setup-client-lan.sh    # console Client-LAN

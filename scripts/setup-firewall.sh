@@ -34,6 +34,7 @@ iptables -t nat -F
 iptables -P FORWARD ACCEPT   # ACCEPT temporaire, le temps d'ajouter les regles (verrouillage a l'etape 11)
 
 echo "=== 4. Regles FORWARD ==="
+
 # "Autoriser le trafic deja etabli" (necessaire pour que
 # les reponses aux connexions autorisees puissent revenir)
 iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
