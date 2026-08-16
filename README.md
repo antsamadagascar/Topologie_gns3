@@ -16,15 +16,6 @@ bash /root/setup-serveur-web.sh   # console Serveur-Web
 bash /root/setup-client-lan.sh    # console Client-LAN
 ```
 
-Si pas encore sauvegardé, coller une fois via :
-```bash
-cat > /root/setup-firewall.sh << 'EOF'
-[coller le contenu du script ici]
-EOF
-bash /root/setup-firewall.sh
-```
-(idem pour les 3 autres — une fois sauvegardés, plus besoin de recoller au prochain démarrage)
-
 ## 3. Vérification rapide (console Firewall-3if-1)
 ```bash
 ip addr show
@@ -145,7 +136,7 @@ tail -20 /var/log/squid/access.log
 ## Pour forcer le test Facebook/YouTube hors des heures de bureau
 ```bash
 nano /etc/squid/squid.conf
-# remplacer temporairement : time MTWHF 08:00-12:00  →  time MTWHF 00:00-23:59
+# remplace temporairement : time MTWHF 08:00-12:00  →  time MTWHF 00:00-23:59
 squid -k reconfigure
-# ⚠️ remettre les vraies heures après le test, puis squid -k reconfigure à nouveau
+#  remet les vraies heures après le test, puis squid -k reconfigure à nouveau
 ```
